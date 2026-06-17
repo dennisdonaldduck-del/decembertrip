@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roz &amp; Dean Do Asia • Japan vs China December Showdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #0F766E;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .nav-active {
+            color: #0F766E;
+            border-bottom: 2px solid #0F766E;
+        }
+
+        .comparison-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .metric-bar {
+            transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .asia-gradient {
+            background: linear-gradient(135deg, #0F766E 0%, #134E4A 100%);
+        }
+
+        .festive-gold {
+            color: #F59E0B;
+        }
+
+        .travel-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .travel-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .metric-value {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .quiz-option {
+            transition: all 0.2s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: #F0FDFA;
+            border-color: #14B8A6;
+        }
+
+        .quiz-option.selected {
+            background-color: #CCFBF1;
+            border-color: #0F766E;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+        }
+
+        .result-badge {
+            animation: popIn 0.4s ease forwards;
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- NAV -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 asia-gradient rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-globe text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">Roz &amp; Dean</span>
+                        <span class="font-semibold text-teal-700">Do Asia</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#showdown" class="hover:text-teal-700 transition-colors">The Showdown</a>
+                    <a href="#quiz" class="hover:text-teal-700 transition-colors">Find Your Match</a>
+                    <a href="#calculator" class="hover:text-teal-700 transition-colors">Cost Calculator</a>
+                    <a href="#details" class="hover:text-teal-700 transition-colors">Deep Dive</a>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <div class="hidden sm:flex items-center gap-x-2 text-sm bg-slate-100 px-3 py-1.5 rounded-3xl">
+                        <i class="fa-solid fa-map-marker-alt text-teal-600"></i>
+                        <span class="font-medium text-slate-600">Cape Town → Asia</span>
+                    </div>
+                    <button onclick="document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-5 py-2.5 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold rounded-3xl flex items-center gap-x-2 transition-all active:scale-[0.985]">
+                        <span>Start Planning</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-12">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-x-2 bg-white shadow-sm border px-4 h-9 rounded-3xl text-sm font-medium mb-6">
+                    <div class="flex -space-x-1">
+                        <div class="w-5 h-5 bg-orange-400 rounded-full border border-white"></div>
+                        <div class="w-5 h-5 bg-teal-600 rounded-full border border-white"></div>
+                    </div>
+                    <span>December 2026 • From Cape Town</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl leading-[1.05] tracking-tighter font-bold heading-serif">
+                    Japan vs China.<br>
+                    <span class="text-teal-700">Our December</span><br>
+                    Asia Showdown.
+                </h1>
+                
+                <p class="mt-6 max-w-lg text-xl text-slate-600">
+                    Two South Africans researching the perfect winter escape. 
+                    Real costs, real visas, real weather — and an interactive planner to help you choose.
+                </p>
+                
+                <div class="flex items-center gap-x-4 mt-8">
+                    <button onclick="document.getElementById('showdown').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 h-14 bg-white hover:bg-slate-50 border text-lg font-semibold rounded-3xl flex items-center gap-x-3 shadow-sm transition-all">
+                        <span>Compare Now</span>
+                    </button>
+                    <button onclick="document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 h-14 bg-teal-700 hover:bg-teal-800 text-white text-lg font-semibold rounded-3xl flex items-center gap-x-3 transition-all">
+                        <span>Take the Quiz</span>
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-x-6 mt-8 text-sm">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-check-circle text-emerald-500 mr-2"></i>
+                        <span class="text-slate-600">Based on real 2026 data</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5">
+                <div class="bg-white rounded-3xl shadow-xl p-2 border">
+                    <div class="aspect-video bg-gradient-to-br from-teal-800 to-slate-900 rounded-3xl overflow-hidden relative flex items-center justify-center">
+                        <div class="text-center text-white px-6">
+                            <div class="flex justify-center gap-x-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-torii-gate text-4xl mb-1"></i>
+                                    <div class="text-xs tracking-widest">JAPAN</div>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-landmark text-4xl mb-1"></i>
+                                    <div class="text-xs tracking-widest">CHINA</div>
+                                </div>
+                            </div>
+                            <div class="font-semibold text-xl">Winter Lights • Epic History • Incredible Food</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE SHOWDOWN -->
+    <div id="showdown" class="max-w-screen-xl mx-auto px-6 py-12 border-t">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <span class="text-teal-600 font-semibold tracking-wider text-sm">THE DECISION</span>
+                <h2 class="section-header tracking-tight">Japan or China in December?</h2>
+            </div>
+            <div class="hidden md:block text-right text-sm text-slate-500 max-w-[220px]">
+                From Cape Town. Real numbers. No fluff.
+            </div>
+        </div>
+
+        <!-- Side by Side Comparison -->
+        <div class="grid md:grid-cols-2 gap-6">
+            
+            <!-- JAPAN CARD -->
+            <div class="comparison-card bg-white border border-teal-100 rounded-3xl p-8 shadow-sm">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="px-4 py-1 text-xs font-bold tracking-widest bg-teal-100 text-teal-700 rounded-3xl">JAPAN</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-emerald-600 text-sm font-semibold flex items-center justify-end gap-x-1">
+                            <i class="fa-solid fa-thumbs-up"></i> 
+                            <span>Our slight edge</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-4xl font-bold tracking-tighter mb-1">Japan</h3>
+                <p class="text-slate-600 mb-8">Polished, efficient &amp; magical winter lights</p>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-passport w-5 text-teal-600"></i>
+                            <span class="font-medium">Visa</span>
+                        </div>
+                        <span class="font-semibold text-emerald-600">eVisa (easy online)</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-plane w-5 text-teal-600"></i>
+                            <span class="font-medium">Flights (return)</span>
+                        </div>
+                        <span class="font-semibold">R14k – R20k</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-cloud-sun w-5 text-teal-600"></i>
+                            <span class="font-medium">Dec Weather (Tokyo)</span>
+                        </div>
+                        <span class="font-semibold">8–13°C • Crisp &amp; nice</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-wallet w-5 text-teal-600"></i>
+                            <span class="font-medium">Daily cost (mid)</span>
+                        </div>
+                        <span class="font-semibold">R2,400 – R3,200</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t">
+                    <div class="text-xs uppercase tracking-widest font-bold text-slate-400 mb-3">BEST FOR</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1 text-xs bg-teal-50 text-teal-700 rounded-3xl font-medium">Foodies</span>
+                        <span class="px-4 py-1 text-xs bg-teal-50 text-teal-700 rounded-3xl font-medium">First-timers</span>
+                        <span class="px-4 py-1 text-xs bg-teal-50 text-teal-700 rounded-3xl font-medium">Winter lights</span>
+                        <span class="px-4 py-1 text-xs bg-teal-50 text-teal-700 rounded-3xl font-medium">Ease &amp; efficiency</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CHINA CARD -->
+            <div class="comparison-card bg-white border border-orange-100 rounded-3xl p-8 shadow-sm">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="px-4 py-1 text-xs font-bold tracking-widest bg-orange-100 text-orange-700 rounded-3xl">CHINA</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-orange-600 text-sm font-semibold flex items-center justify-end gap-x-1">
+                            <i class="fa-solid fa-coins"></i> 
+                            <span>Better value</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-4xl font-bold tracking-tighter mb-1">China</h3>
+                <p class="text-slate-600 mb-8">Epic scale, history &amp; incredible value</p>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-passport w-5 text-orange-600"></i>
+                            <span class="font-medium">Visa</span>
+                        </div>
+                        <span class="font-semibold text-orange-600">Full tourist visa required</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-plane w-5 text-orange-600"></i>
+                            <span class="font-medium">Flights (return)</span>
+                        </div>
+                        <span class="font-semibold">R13k – R19k</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-cloud-sun w-5 text-orange-600"></i>
+                            <span class="font-medium">Dec Weather</span>
+                        </div>
+                        <span class="font-semibold">Beijing: cold • Shanghai: nice</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid fa-wallet w-5 text-orange-600"></i>
+                            <span class="font-medium">Daily cost (mid)</span>
+                        </div>
+                        <span class="font-semibold">R1,400 – R2,300</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t">
+                    <div class="text-xs uppercase tracking-widest font-bold text-slate-400 mb-3">BEST FOR</div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1 text-xs bg-orange-50 text-orange-700 rounded-3xl font-medium">History lovers</span>
+                        <span class="px-4 py-1 text-xs bg-orange-50 text-orange-700 rounded-3xl font-medium">Budget stretchers</span>
+                        <span class="px-4 py-1 text-xs bg-orange-50 text-orange-700 rounded-3xl font-medium">Epic scale</span>
+                        <span class="px-4 py-1 text-xs bg-orange-50 text-orange-700 rounded-3xl font-medium">Bullet trains</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE QUIZ -->
+    <div id="quiz" class="max-w-screen-xl mx-auto px-6 py-16 bg-white border-t">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <span class="text-teal-600 font-semibold tracking-[3px] text-sm">PERSONALIZED</span>
+            <h2 class="section-header tracking-tight mt-1">Which destination fits you best?</h2>
+            <p class="text-slate-600 mt-3">Answer 5 quick questions. We'll give you a clear recommendation.</p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto bg-slate-50 border rounded-3xl p-8">
+            <!-- Quiz Questions -->
+            <div id="quiz-container">
+                <!-- Questions injected by JS -->
+            </div>
+            
+            <div id="quiz-result" class="hidden mt-8 p-8 bg-white border rounded-3xl">
+                <div class="text-center">
+                    <div id="result-badge" 
+                         class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 text-4xl result-badge">
+                    </div>
+                    <h3 id="result-title" class="text-3xl font-bold tracking-tight"></h3>
+                    <p id="result-subtitle" class="text-lg text-slate-600 mt-1"></p>
+                    
+                    <div class="my-6 text-left max-w-md mx-auto">
+                        <div id="result-reasons" class="space-y-2 text-sm"></div>
+                    </div>
+                    
+                    <button onclick="restartQuiz()" 
+                            class="mt-4 px-6 py-3 text-sm font-semibold border rounded-3xl hover:bg-slate-50 transition-colors">
+                        Retake Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COST CALCULATOR -->
+    <div id="calculator" class="max-w-screen-xl mx-auto px-6 py-16 border-t bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-teal-600 font-semibold tracking-[3px] text-sm">BUDGET PLANNER</span>
+                <h2 class="section-header tracking-tight">How much will it really cost?</h2>
+            </div>
+            
+            <div class="bg-white border rounded-3xl p-8 shadow-sm">
+                <div class="grid md:grid-cols-2 gap-x-10 gap-y-8">
+                    
+                    <!-- Inputs -->
+                    <div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Trip length (days)</label>
+                            <div class="flex items-center gap-x-4">
+                                <input type="range" id="days-slider" min="7" max="21" step="1" value="12" 
+                                       class="w-full accent-teal-700" oninput="updateCalculator()">
+                                <div class="w-14 text-center">
+                                    <span id="days-value" class="font-mono text-2xl font-semibold">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Number of travellers</label>
+                            <div class="flex items-center gap-x-3">
+                                <button onclick="adjustTravellers(-1)" class="w-9 h-9 flex items-center justify-center border rounded-2xl hover:bg-slate-50 active:scale-95">-</button>
+                                <div class="px-6 py-1.5 bg-slate-100 rounded-3xl font-mono font-semibold text-xl w-14 text-center" id="travellers-value">2</div>
+                                <button onclick="adjustTravellers(1)" class="w-9 h-9 flex items-center justify-center border rounded-2xl hover:bg-slate-50 active:scale-95">+</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Travel style</label>
+                            <div class="flex gap-x-2">
+                                <button onclick="setStyle('budget')" id="style-budget"
+                                        class="flex-1 px-5 py-3 text-sm font-medium border rounded-3xl hover:bg-slate-50 active:scale-[0.985]">Budget</button>
+                                <button onclick="setStyle('mid')" id="style-mid"
+                                        class="flex-1 px-5 py-3 text-sm font-medium border rounded-3xl bg-teal-700 text-white">Mid-range</button>
+                                <button onclick="setStyle('luxury')" id="style-luxury"
+                                        class="flex-1 px-5 py-3 text-sm font-medium border rounded-3xl hover:bg-slate-50 active:scale-[0.985]">Luxury</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="bg-slate-900 text-white rounded-3xl p-7">
+                        <div class="text-xs tracking-[2px] font-bold text-teal-400 mb-4">ESTIMATED TOTAL COST (ZAR)</div>
+                        
+                        <div class="space-y-6">
+                            <!-- Japan -->
+                            <div>
+                                <div class="flex justify-between items-baseline mb-1.5">
+                                    <div class="flex items-center gap-x-2">
+                                        <span class="font-semibold">Japan</span>
+                                    </div>
+                                    <div>
+                                        <span id="japan-total" class="font-mono text-4xl font-bold tracking-tighter">68,400</span>
+                                    </div>
+                                </div>
+                                <div class="h-2.5 bg-white/10 rounded-full overflow-hidden">
+                                    <div id="japan-bar" class="h-2.5 bg-teal-400 rounded-full metric-bar" style="width: 72%"></div>
+                                </div>
+                                <div class="text-[10px] text-teal-300 mt-1 flex justify-between">
+                                    <span>Flights + on-ground</span>
+                                </div>
+                            </div>
+                            
+                            <!-- China -->
+                            <div>
+                                <div class="flex justify-between items-baseline mb-1.5">
+                                    <div class="flex items-center gap-x-2">
+                                        <span class="font-semibold">China</span>
+                                    </div>
+                                    <div>
+                                        <span id="china-total" class="font-mono text-4xl font-bold tracking-tighter">49,200</span>
+                                    </div>
+                                </div>
+                                <div class="h-2.5 bg-white/10 rounded-full overflow-hidden">
+                                    <div id="china-bar" class="h-2.5 bg-orange-400 rounded-full metric-bar" style="width: 51%"></div>
+                                </div>
+                                <div class="text-[10px] text-orange-300 mt-1 flex justify-between">
+                                    <span>Flights + on-ground</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-white/20 text-xs flex justify-between text-teal-300">
+                            <div>Per person</div>
+                            <div id="per-person-note" class="font-medium">R34,200 • Japan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEATHER &amp; HIGHLIGHTS -->
+    <div id="details" class="max-w-screen-xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-12 gap-6">
+            
+            <!-- Weather -->
+            <div class="md:col-span-5 bg-white border rounded-3xl p-8">
+                <h3 class="font-semibold text-xl mb-6 flex items-center gap-x-3">
+                    <i class="fa-solid fa-temperature-low text-teal-600"></i> 
+                    <span>December Weather Snapshot</span>
+                </h3>
+                
+                <div class="space-y-4">
+                    <div onclick="showWeatherModal('tokyo')" class="cursor-pointer flex items-center justify-between p-4 border rounded-2xl hover:bg-teal-50 transition-colors">
+                        <div>
+                            <div class="font-semibold">Tokyo / Kyoto</div>
+                            <div class="text-xs text-slate-500">Japan</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-mono text-2xl font-semibold">8–13°C</div>
+                            <div class="text-emerald-600 text-xs">Crisp &amp; comfortable</div>
+                        </div>
+                    </div>
+                    
+                    <div onclick="showWeatherModal('beijing')" class="cursor-pointer flex items-center justify-between p-4 border rounded-2xl hover:bg-orange-50 transition-colors">
+                        <div>
+                            <div class="font-semibold">Beijing</div>
+                            <div class="text-xs text-slate-500">China (North)</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-mono text-2xl font-semibold">-6–4°C</div>
+                            <div class="text-orange-600 text-xs">Cold • Snow possible</div>
+                        </div>
+                    </div>
+                    
+                    <div onclick="showWeatherModal('shanghai')" class="cursor-pointer flex items-center justify-between p-4 border rounded-2xl hover:bg-orange-50 transition-colors">
+                        <div>
+                            <div class="font-semibold">Shanghai</div>
+                            <div class="text-xs text-slate-500">China (East)</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-mono text-2xl font-semibold">2–11°C</div>
+                            <div class="text-orange-600 text-xs">Milder winter</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 bg-white border rounded-3xl p-8">
+                <h3 class="font-semibold text-xl mb-6">What we loved most about each</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <div class="font-semibold text-teal-700 mb-3 flex items-center gap-x-2">
+                            <i class="fa-solid fa-torii-gate"></i> <span>Japan Highlights</span>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex gap-x-2"><span class="text-teal-500 mt-1">•</span> Magical winter illuminations in Tokyo</li>
+                            <li class="flex gap-x-2"><span class="text-teal-500 mt-1">•</span> Kyoto temples in crisp air</li>
+                            <li class="flex gap-x-2"><span class="text-teal-500 mt-1">•</span> World-class food (ramen, sushi, hotpots)</li>
+                            <li class="flex gap-x-2"><span class="text-teal-500 mt-1">•</span> Insanely efficient trains &amp; safety</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-orange-700 mb-3 flex items-center gap-x-2">
+                            <i class="fa-solid fa-landmark"></i> <span>China Highlights</span>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex gap-x-2"><span class="text-orange-500 mt-1">•</span> Snow-covered Great Wall (epic!)</li>
+                            <li class="flex gap-x-2"><span class="text-orange-500 mt-1">•</span> Forbidden City in winter light</li>
+                            <li class="flex gap-x-2"><span class="text-orange-500 mt-1">•</span> Amazing value + high-speed rail</li>
+                            <li class="flex gap-x-2"><span class="text-orange-500 mt-1">•</span> Shanghai Bund festive lights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL RECOMMENDATION -->
+    <div class="max-w-screen-xl mx-auto px-6 pb-20">
+        <div class="max-w-3xl mx-auto bg-gradient-to-br from-teal-800 to-teal-900 text-white rounded-3xl p-10 md:p-14 text-center">
+            <div class="uppercase tracking-[4px] text-teal-300 text-xs font-bold mb-3">OUR VERDICT</div>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">We’re leaning Japan.</h2>
+            <p class="max-w-md mx-auto text-teal-100">Easier visa, more comfortable December weather in the cities we want to visit, and that magical festive atmosphere. But China wins big on value and epic scale.</p>
+            
+            <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                <button onclick="document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-8 h-14 bg-white text-teal-900 font-semibold rounded-3xl flex items-center justify-center gap-x-2 hover:bg-amber-50 transition-all">
+                    Take the quiz to decide for yourself
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-sm">
+        <div class="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-y-4">
+            <div>© 2026 Roz &amp; Dean Do Asia • From Cape Town with ❤️</div>
+            <div class="flex gap-x-6 text-xs">
+                <span class="hover:text-white cursor-pointer">Our full itinerary</span>
+                <span class="hover:text-white cursor-pointer">Visa checklist PDF</span>
+                <span class="hover:text-white cursor-pointer">Flight alerts</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Weather Modal -->
+    <div id="weather-modal" onclick="hideWeatherModal()" class="hidden fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white max-w-md w-full rounded-3xl p-8">
+            <div id="modal-content"></div>
+            <button onclick="hideWeatherModal()" class="mt-6 w-full py-3 text-sm font-semibold border rounded-3xl hover:bg-slate-50">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0F766E');
+        }
+        
+        // Quiz Data
+        const quizQuestions = [
+            {
+                question: "What's most important to you on this trip?",
+                options: [
+                    { text: "Amazing food experiences", value: "japan", weight: 2 },
+                    { text: "Incredible history & ancient sites", value: "china", weight: 2 },
+                    { text: "Easy planning & low stress", value: "japan", weight: 2 },
+                    { text: "Best value for money", value: "china", weight: 2 }
+                ]
+            },
+            {
+                question: "How do you feel about cold weather?",
+                options: [
+                    { text: "Love crisp winter (but not freezing)", value: "japan", weight: 2 },
+                    { text: "I enjoy snow and proper winter", value: "china", weight: 1 },
+                    { text: "Prefer milder temperatures", value: "japan", weight: 2 },
+                    { text: "Doesn't matter to me", value: "neutral", weight: 0 }
+                ]
+            },
+            {
+                question: "Visa hassle tolerance?",
+                options: [
+                    { text: "Want it as easy as possible (online)", value: "japan", weight: 3 },
+                    { text: "Happy to do proper visa application", value: "china", weight: 1 },
+                    { text: "Don't mind a bit of admin", value: "neutral", weight: 0 }
+                ]
+            },
+            {
+                question: "Your travel style leans toward...",
+                options: [
+                    { text: "Polished, efficient, high-quality everything", value: "japan", weight: 2 },
+                    { text: "Epic adventures & great value", value: "china", weight: 2 },
+                    { text: "Mix of both", value: "neutral", weight: 0 }
+                ]
+            },
+            {
+                question: "Top priority experience?",
+                options: [
+                    { text: "Festive winter lights & city magic", value: "japan", weight: 2 },
+                    { text: "Standing on the Great Wall in snow", value: "china", weight: 2 },
+                    { text: "Both sound amazing", value: "neutral", weight: 1 }
+                ]
+            }
+        ]
+        
+        let currentQuestion = 0
+        let quizAnswers = []
+        
+        function startQuiz() {
+            currentQuestion = 0
+            quizAnswers = []
+            document.getElementById('quiz-result').classList.add('hidden')
+            document.getElementById('quiz-container').innerHTML = ''
+            showQuestion()
+        }
+        
+        function showQuestion() {
+            const container = document.getElementById('quiz-container')
+            container.innerHTML = ''
+            
+            const q = quizQuestions[currentQuestion]
+            
+            const html = `
+                <div>
+                    <div class="flex justify-between text-xs mb-2 px-1">
+                        <span class="font-medium text-slate-500">Question ${currentQuestion + 1} of ${quizQuestions.length}</span>
+                    </div>
+                    <div class="text-xl font-semibold tracking-tight mb-6">${q.question}</div>
+                    
+                    <div class="space-y-3">
+                        ${q.options.map((opt, idx) => `
+                            <div onclick="selectAnswer(${idx})" 
+                                 class="quiz-option cursor-pointer border px-6 py-4 rounded-2xl flex items-center justify-between hover:border-teal-200">
+                                <span class="font-medium">${opt.text}</span>
+                                <i class="fa-solid fa-chevron-right text-slate-300"></i>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `
+            container.innerHTML = html
+        }
+        
+        function selectAnswer(optionIndex) {
+            const q = quizQuestions[currentQuestion]
+            const selectedOption = q.options[optionIndex]
+            
+            quizAnswers.push({
+                value: selectedOption.value,
+                weight: selectedOption.weight
+            })
+            
+            currentQuestion++
+            
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion()
+            } else {
+                showQuizResult()
+            }
+        }
+        
+        function showQuizResult() {
+            const container = document.getElementById('quiz-container')
+            const resultDiv = document.getElementById('quiz-result')
+            
+            container.innerHTML = ''
+            resultDiv.classList.remove('hidden')
+            
+            // Calculate scores
+            let japanScore = 0
+            let chinaScore = 0
+            
+            quizAnswers.forEach(answer => {
+                if (answer.value === 'japan') japanScore += answer.weight
+                if (answer.value === 'china') chinaScore += answer.weight
+            })
+            
+            const total = japanScore + chinaScore
+            const japanPercent = Math.round((japanScore / total) * 100)
+            
+            let recommendation = ''
+            let reasons = []
+            let badgeHTML = ''
+            
+            if (japanScore > chinaScore) {
+                recommendation = 'Japan'
+                badgeHTML = `<i class="fa-solid fa-torii-gate text-5xl text-teal-600"></i>`
+                reasons = [
+                    "Easier visa process with eVisa",
+                    "More comfortable December weather",
+                    "Magical winter illuminations",
+                    "World-class food & efficiency"
+                ]
+            } else if (chinaScore > japanScore) {
+                recommendation = 'China'
+                badgeHTML = `<i class="fa-solid fa-landmark text-5xl text-orange-600"></i>`
+                reasons = [
+                    "Significantly better value for money",
+                    "Epic historical experiences (Great Wall!)",
+                    "Amazing high-speed rail network",
+                    "More budget left for luxury or longer trip"
+                ]
+            } else {
+                recommendation = 'Both work well!'
+                badgeHTML = `<i class="fa-solid fa-globe text-5xl text-teal-600"></i>`
+                reasons = [
+                    "You have balanced priorities",
+                    "Japan for ease & magic, China for value & scale",
+                    "Consider splitting time if your schedule allows"
+                ]
+            }
+            
+            document.getElementById('result-badge').innerHTML = badgeHTML
+            document.getElementById('result-title').innerHTML = recommendation
+            document.getElementById('result-subtitle').innerHTML = japanPercent > 55 ? 
+                `Strong lean toward Japan (${japanPercent}% match)` : 
+                (japanPercent < 45 ? `Strong lean toward China (${100 - japanPercent}% match)` : `Very close call!`)
+            
+            const reasonsHTML = reasons.map(r => `
+                <div class="flex gap-x-3 items-start">
+                    <i class="fa-solid fa-check text-emerald-500 mt-1 text-sm"></i>
+                    <span>${r}</span>
+                </div>
+            `).join('')
+            
+            document.getElementById('result-reasons').innerHTML = reasonsHTML
+        }
+        
+        function restartQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden')
+            startQuiz()
+        }
+        
+        // Cost Calculator
+        let currentStyle = 'mid'
+        let travellers = 2
+        let days = 12
+        
+        const dailyCosts = {
+            budget: { japan: 1800, china: 1100 },
+            mid:    { japan: 2800, china: 1750 },
+            luxury: { japan: 4800, china: 3200 }
+        }
+        
+        const flightCost = 17000 // average per person
+        
+        function updateCalculator() {
+            days = parseInt(document.getElementById('days-slider').value)
+            document.getElementById('days-value').textContent = days
+            
+            calculateTotals()
+        }
+        
+        function adjustTravellers(change) {
+            travellers = Math.max(1, Math.min(6, travellers + change))
+            document.getElementById('travellers-value').textContent = travellers
+            calculateTotals()
+        }
+        
+        function setStyle(style) {
+            currentStyle = style
+            
+            // Update button styles
+            document.getElementById('style-budget').classList.remove('bg-teal-700', 'text-white')
+            document.getElementById('style-mid').classList.remove('bg-teal-700', 'text-white')
+            document.getElementById('style-luxury').classList.remove('bg-teal-700', 'text-white')
+            
+            document.getElementById('style-' + style).classList.add('bg-teal-700', 'text-white')
+            
+            calculateTotals()
+        }
+        
+        function calculateTotals() {
+            const daily = dailyCosts[currentStyle]
+            
+            const japanGround = daily.japan * days * travellers
+            const chinaGround = daily.china * days * travellers
+            
+            const japanTotal = japanGround + (flightCost * travellers)
+            const chinaTotal = chinaGround + (flightCost * travellers)
+            
+            // Update UI
+            document.getElementById('japan-total').textContent = japanTotal.toLocaleString()
+            document.getElementById('china-total').textContent = chinaTotal.toLocaleString()
+            
+            // Bars
+            const maxTotal = Math.max(japanTotal, chinaTotal)
+            document.getElementById('japan-bar').style.width = ((japanTotal / maxTotal) * 100) + '%'
+            document.getElementById('china-bar').style.width = ((chinaTotal / maxTotal) * 100) + '%'
+            
+            // Per person note
+            const japanPerPerson = Math.round(japanTotal / travellers)
+            document.getElementById('per-person-note').innerHTML = `R${japanPerPerson.toLocaleString()} • Japan (per person)`
+        }
+        
+        function initializeCalculator() {
+            // Set initial values
+            document.getElementById('days-slider').value = days
+            document.getElementById('days-value').textContent = days
+            document.getElementById('travellers-value').textContent = travellers
+            
+            // Set initial style button
+            document.getElementById('style-mid').classList.add('bg-teal-700', 'text-white')
+            
+            // Initial calculation
+            setTimeout(() => {
+                calculateTotals()
+            }, 100)
+            
+            // Add listener to slider
+            document.getElementById('days-slider').addEventListener('input', updateCalculator)
+        }
+        
+        // Weather Modal
+        function showWeatherModal(city) {
+            const modal = document.getElementById('weather-modal')
+            const content = document.getElementById('modal-content')
+            
+            let html = ''
+            
+            if (city === 'tokyo') {
+                html = `
+                    <div>
+                        <div class="flex items-center gap-x-3 mb-4">
+                            <i class="fa-solid fa-torii-gate text-3xl text-teal-600"></i>
+                            <div>
+                                <div class="font-bold text-2xl">Tokyo / Kyoto Area</div>
+                                <div class="text-sm text-teal-600">Japan • December</div>
+                            </div>
+                        </div>
+                        <div class="text-5xl font-bold tracking-tighter mb-1">8–13°C</div>
+                        <div class="text-emerald-600 font-medium mb-6">Crisp days, cold nights • Low chance of snow in cities</div>
+                        
+                        <div class="text-sm space-y-3 text-slate-600">
+                            <p>Perfect for walking cities and temples. Pack a good coat, scarf, and comfortable shoes. The winter illuminations are absolutely magical at night.</p>
+                            <div class="pt-3 border-t text-xs">Ideal for: First-time visitors who want comfort + beauty.</div>
+                        </div>
+                    </div>
+                `
+            } else if (city === 'beijing') {
+                html = `
+                    <div>
+                        <div class="flex items-center gap-x-3 mb-4">
+                            <i class="fa-solid fa-landmark text-3xl text-orange-600"></i>
+                            <div>
+                                <div class="font-bold text-2xl">Beijing</div>
+                                <div class="text-sm text-orange-600">China • December</div>
+                            </div>
+                        </div>
+                        <div class="text-5xl font-bold tracking-tighter mb-1">-6 to 4°C</div>
+                        <div class="text-orange-600 font-medium mb-6">Freezing nights • Snow possible</div>
+                        
+                        <div class="text-sm space-y-3 text-slate-600">
+                            <p>Very cold but incredibly atmospheric. The Great Wall in snow is one of the most dramatic sights in the world. Pack serious winter layers, thermal base layers, and good boots.</p>
+                            <div class="pt-3 border-t text-xs">Ideal for: People who love dramatic winter scenery and don't mind the cold.</div>
+                        </div>
+                    </div>
+                `
+            } else if (city === 'shanghai') {
+                html = `
+                    <div>
+                        <div class="flex items-center gap-x-3 mb-4">
+                            <i class="fa-solid fa-city text-3xl text-orange-600"></i>
+                            <div>
+                                <div class="font-bold text-2xl">Shanghai</div>
+                                <div class="text-sm text-orange-600">China • December</div>
+                            </div>
+                        </div>
+                        <div class="text-5xl font-bold tracking-tighter mb-1">2–11°C</div>
+                        <div class="text-orange-600 font-medium mb-6">Milder winter • Great for cities</div>
+                        
+                        <div class="text-sm space-y-3 text-slate-600">
+                            <p>Similar comfort level to Tokyo. Beautiful Bund waterfront lights and festive atmosphere. Much easier to explore on foot than Beijing in deep winter.</p>
+                            <div class="pt-3 border-t text-xs">Ideal for: City lovers who want winter charm without extreme cold.</div>
+                        </div>
+                    </div>
+                `
+            }
+            
+            content.innerHTML = html
+            modal.classList.remove('hidden')
+            modal.classList.add('flex')
+        }
+        
+        function hideWeatherModal() {
+            const modal = document.getElementById('weather-modal')
+            modal.classList.remove('flex')
+            modal.classList.add('hidden')
+        }
+        
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind()
+            
+            // Start quiz on load (or make button start it)
+            // For now, show first question when user clicks into section
+            const quizSection = document.getElementById('quiz')
+            
+            // Auto-start quiz when section comes into view (optional nice touch)
+            // Or add a start button
+            const startBtnHTML = `
+                <div class="text-center mt-4">
+                    <button onclick="startQuiz()" 
+                            class="px-8 py-4 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded-3xl flex items-center gap-x-3 mx-auto transition-all">
+                        <span>Start the 5-question quiz</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            `
+            document.getElementById('quiz-container').innerHTML = startBtnHTML
+            
+            // Initialize calculator
+            initializeCalculator()
+            
+            // Keyboard support for calculator
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "?" && document.activeElement.tagName === "BODY") {
+                    e.preventDefault()
+                    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' })
+                    setTimeout(() => {
+                        const container = document.getElementById('quiz-container')
+                        if (!container.querySelector('.quiz-option')) {
+                            startQuiz()
+                        }
+                    }, 800)
+                }
+            })
+            
+            // Nice touch: scroll progress hint
+            console.log('%c[Roz & Dean Do Asia] Interactive website ready. Press "?" to jump to quiz.', 'color:#64748b')
+        }
+        
+        // Boot the site
+        window.onload = function() {
+            initializeWebsite()
+        }
+        
+        // Easter egg: console message
+        console.log('%c[Roz & Dean] Thanks for building with us! — Dean from Cape Town', 'color:#14b8a6')
+    </script>
+</body>
+</html>
